@@ -1,0 +1,196 @@
+----------------------------------------------------------------
+CONCATENAÇÃO
+----------------------------------------------------------------
+
+$nome = "Sandro";
+$cor = vermelho;
+$idade = 28;
+
+echo "Olá, " .$nome. "! Vimos que você tem " .$idade. "anos de idade e que sua cor favorita é " .$cor. ".";
+
+
+----------------------------------------------------------------
+OPERADOR TERNÁRIO
+----------------------------------------------------------------
+
+<condição> ? true : false
+
+<?php
+    $possui_cartao_credito = false;
+?>
+
+<p>O cliente possui cartão de crédito? <?= $possui_cartao_credito == true ? 'Sim' : 'Não'; ?></p>
+
+----------------------------------------------------------------
+CASTING
+----------------------------------------------------------------
+
+$valor = 10; //integer
+    $novoValor = (float) $valor; //int --> float
+    //tbm é possível fazer a conversão para double, string, real
+    $novoValor2 = (double) $valor; //int --> float
+    $novoValor3 = (string) $valor; //int --> float
+
+    echo gettype($valor);
+    echo '<br>';
+    echo gettype($novoValor);
+    echo '<br>';
+    echo gettype($novoValor2);
+    echo '<br>';
+    echo gettype($novoValor3);
+
+----------------------------------------------------------------
+FUNÇÕES
+----------------------------------------------------------------
+function NomeFuncao($param,$param2){
+    <program>
+    return $returnValue;
+}
+
+NomeFuncao($param,$param2);
+
+----------------------------------------------------------------
+FUNÇÕES STRING
+----------------------------------------------------------------
+
+$texto = 'curso completo de php';
+
+    //string to lower
+    echo $texto. '<br />';
+    echo strtolower($texto);
+    echo '<hr/>';
+
+    //string to upper
+    echo $texto. '<br />';
+    echo strtoupper($texto);
+    echo '<hr/>';
+
+    //upper case first
+    echo $texto. '<br />';
+    echo ucfirst($texto);
+    echo '<hr/>';
+
+    //string lenght
+    echo $texto. '<br />';
+    echo strlen($texto);
+    echo '<hr/>';
+    
+    //string replace
+    echo $texto. '<br />';
+    echo str_replace('.', ',', '22.20'); // é case-sensitive
+    echo '<hr/>';
+    
+    //string 
+    echo $texto. '<br />';
+    //'Curso Completo de PHP'
+    //0,1,2,3,4,5 ... 20
+    echo substr($texto,0 ,14) . '...';
+    echo '<hr/>';
+
+----------------------------------------------------------------
+FUNÇÕES MATH
+----------------------------------------------------------------
+
+// $num = 7.5;
+    // echo ceil($num); //arredonda para cima
+    //echo floor($num); //arredonda para baixo
+    // echo round($num) //arrendoda com base na fracao (.0 .4 -> para baixo) (.5 .9 -> para cima)
+    // echo rand(10, 20); //gerar um falor aleatório (maior valor aleatório possível)
+    // echo '<br />' . getrandmax(); //descobre o valor maximo que pode ser aleatorio a depender do sistema operacional
+    
+    echo sqrt(9); //raiz quadrada
+
+----------------------------------------------------------------
+FUNÇÕES DATE
+----------------------------------------------------------------
+
+//recuperacao da data atual ou data corrente
+
+    // dia/mes/ano horas:minutos
+    echo date('d/m/Y H:i');
+
+    echo '<br />';
+    echo date_default_timezone_get(); //está em Berlim
+    date_default_timezone_set('America/Sao_Paulo'); //muda para Brasil
+    echo '<br />';
+    echo date('d/m/Y H:i');
+    */
+
+    $data_inicial = '2018-04-24';
+    $data_final = '2018-05-15';
+
+    //timestamp
+    //01/01/1970 -- 2018-04-24 (js -> milissegundos / php -> segundos)
+    $time_inicial = strtotime($data_inicial);
+    $time_final = strtotime($data_final);
+    echo $data_inicial . ' - ' . $time_inicial;
+    echo '<br />';
+    echo $data_final . ' - ' . $time_final;
+
+    $diferenca_times = $time_final - $time_inicial;
+    echo '<br />';
+    echo 'A diferença de segundos entre a data inicial e final é: ' . $diferenca_times;
+
+    $segundos_existem_dia = 24 * 60 * 60;
+    echo '<br />';
+    echo 'Um dia possui ' . $segundos_existem_dia . ' segundos';
+
+    $diferenca_de_dias_entre_as_datas = $diferenca_times / $segundos_existem_dia;
+    echo '<br / >';
+    echo 'A diferença em dias é: ' . $diferenca_de_dias_entre_as_datas;
+
+----------------------------------------------------------------
+ARRAY
+----------------------------------------------------------------
+
+// $lista = array();
+$lista = [];
+
+for($i=0;$i<3;$i++){
+    $lista[$i] = 'append';
+}
+
+// foreach($lista as $i){
+//     echo "$i <br/>";
+// }
+
+echo '<pre>'; //método para formatar a exibição da array no BOM
+var_dump($lista); //função para exibição de array inline
+echo '</pre>';
+
+// echo "$lista[0] <br/>";
+// echo "$lista[1] <br/>";
+// echo "$lista[2] <br/>";
+
+----------------------------------------------------------------
+ARRAY MULTIDIMENSIONAL
+----------------------------------------------------------------
+
+$cars = array (
+  array("Volvo",22,18),
+  array("BMW",15,13),
+  array("Saab",5,2),
+  array("Land Rover",17,15)
+);
+
+OU
+
+// $lista_coisas = array();
+    $lista_coisas = [];
+
+    $lista_coisas['frutas'] = array(1 => 'Banana', 2 => 'Maçã', 3 => 'Morango', 4 => 'Uva');
+    $lista_coisas['pessoas'] = [1 => 'João', 2 => 'José', 3 => 'Maria'];
+
+    echo '<pre>';
+    print_r($lista_coisas);
+    echo '</pre>';
+    echo '<hr/>';
+    echo $lista_coisas['frutas'][3];
+    echo '<br />';
+    echo $lista_coisas['pessoas'][2];
+
+----------------------------------------------------------------
+*
+----------------------------------------------------------------
+
+

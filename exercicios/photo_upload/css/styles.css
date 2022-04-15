@@ -1,0 +1,13 @@
+.usr-input{
+    border-bottom: 1px solid grey;
+    width: 60%;
+    padding: 5px 0 5px 0;
+}
+
+.container{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
