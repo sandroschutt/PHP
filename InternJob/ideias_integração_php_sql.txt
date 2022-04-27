@@ -1,0 +1,21 @@
+//CADASTRA USUÁRIO
+
+$query = "INSERT INTO bd_users (user_name, user_password) VALUES ('".$user_name.",'".$user_password."')";
+
+
+
+//CADASTRA VAGA
+$query = "INSERT INTO bd_vagas (nome_vaga, empresa, categoria, status, plataforma, link) VALUES ('".$nome_vaga.",'".$empresa."','".$categoria."','".$status."','".plataforma."','".$link."')";
+
+
+***
+> A chave estrangeira vai servir para recuperar as vagas com base na id do usuário;
+> Posso usar um COUNT para recuperar o total de ocorrẽncia de registros com base na id do usuário;
+    $_SESSION['user_id'] = SELECT user_id FROM bd_users WHERE $_SESSION['user_name'] == user_name AND $_SESSION['user_password'] == user_password;
+
+$_SESSION['user_name'] e $_SESSION['user_password'] são obtidos pelo formulário de login
+
+
+    COUNT user_id FROM bd_vagas WHERE user_id == $_SESSION['user_id']
+
+EXISTE ALGUMA FUNÇÃO QUE ME PERMITE ITERAR UMA TABELA?
