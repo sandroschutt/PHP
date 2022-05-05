@@ -1,0 +1,9 @@
+Cole o arquivo "desafio_quake.php" em um diretório público (htdocs),
+com o localhost rodando (xampp/apache_server).
+
+Ao rodar o programa, ele irá gerar o arquivo "quake_logs.json", assim como
+irá printar os resultados na aba do navegador.
+
+
+Att
+Sandro Schutt Jr
